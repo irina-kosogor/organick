@@ -1,0 +1,26 @@
+@import "../../../../assets/styles/variables.scss";
+
+.navbar {
+    &__menu {
+        display: flex;
+        gap: 40px;
+        font-weight: 700;
+        font-size: $fs-20;
+        line-height: 23px;
+
+        .dropdown-menu {
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -12px;
+                width: 8px;
+                height: 5px;
+                background: url("../../../../assets/icons/dropdown.svg") no-repeat;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "../../assets/styles/variables.scss";
+
+.header {
+    margin: 70px 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__search-cart {
+        display: flex;
+        gap: 18px;
+    }
+}

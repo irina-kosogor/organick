@@ -1,0 +1,29 @@
+@import "../../../../assets/styles/variables.scss";
+
+.cart {
+    position: relative;
+    width: 159px;
+    height: 66px;
+    border: 1px solid $color-grey;
+    border-radius: 33px;
+    text-align: left;
+    padding-left: 75px;
+    line-height: 66px;
+    vertical-align: baseline;
+    font-weight: 600;
+    font-size: $fs-18;
+
+
+    &:after {
+        content: "";
+        width: 56px;
+        height: 56px;
+        background: $color-darkslategray url("../../../../assets/icons/shopping_cart.svg") center center no-repeat;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 6px;
+        z-index: 1;
+    }
+}

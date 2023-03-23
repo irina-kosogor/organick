@@ -1,0 +1,19 @@
+@import "../../../../assets/styles/variables.scss";
+
+
+.brand {
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-right: 8px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 45px;
+    }
+}
