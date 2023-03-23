@@ -1,4 +1,4 @@
-@import "../../assets/styles/variables.scss";
+@import "assets/styles/variables.scss";
 
 .header {
     margin: 70px 0;
@@ -10,6 +10,7 @@
     }
 
     &__search-cart {
+        width: 35%;
         display: flex;
         gap: 18px;
     }

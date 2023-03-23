@@ -1,5 +1,5 @@
 import "./Brand.scss";
-import logo from "../../../../assets/images/logo.svg";
+import logo from "assets/images/logo.svg";
 
 export const Brand = ({ homeLink }) => {
 	return (

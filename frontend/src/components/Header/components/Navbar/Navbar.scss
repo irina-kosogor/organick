@@ -1,9 +1,10 @@
-@import "../../../../assets/styles/variables.scss";
+@import "assets/styles/variables.scss";
 
 .navbar {
     &__menu {
+        width: 35%;
         display: flex;
-        gap: 40px;
+        gap: 7%;
         font-weight: 700;
         font-size: $fs-20;
         line-height: 23px;

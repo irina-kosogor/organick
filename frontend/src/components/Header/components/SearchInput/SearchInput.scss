@@ -1,10 +1,10 @@
-@import "../../../../assets/styles/variables.scss";
+@import "assets/styles/variables.scss";
 
 .header {
 
     &__search-input-wrapper {
         position: relative;
-        width: 376px;
+        width: 70%;
         height: 66px;
 
         &:after {
