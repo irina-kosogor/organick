@@ -1,0 +1,42 @@
+@import "assets/styles/variables.scss";
+
+.eco-friendly {
+    padding: 160px 0;
+    background: $color-whitesmoke url("../../assets/images/eco_friendly_bg.jpg") center left/50% 100% no-repeat;
+
+    &__content {
+        width: 60%;
+        margin-left: 40%;
+        background: $color-white;
+        border-radius: 30px;
+        padding: 80px 90px;
+    }
+
+    &__subtitle {
+        font-family: 'Yellowtail', arial, helvetica, sans-serif;
+        font-weight: 400;
+        font-size: $fs-36;
+        color: $color-dark-green;
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-70;
+        line-height: 82px;
+        margin-bottom: 35px;
+    }
+
+    &__item-title {
+        font-weight: 500;
+        font-size: $fs-25;
+    }
+
+    &__item-description {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: $fs-18;
+        line-height: 1.65;
+        color: $color-dimgray;
+    }
+}
