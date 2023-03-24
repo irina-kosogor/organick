@@ -1,0 +1,82 @@
+[{
+        "category": "Vegetable",
+        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "title": "Calabrese Broccoli",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 13.00,
+        "rating": 5
+    },
+    {
+        "category": "Fresh",
+        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "title": "Fresh Banana Fruites",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 14.00,
+        "rating": 4
+    },
+    {
+        "category": "Millets",
+        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "title": "White Nuts",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 15.00,
+        "rating": 5
+    },
+    {
+        "category": "Vegetable",
+        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "title": "Vegan Red Tomato",
+        "currency": "$",
+        "old-price": 22.00,
+        "new-price": 17.00,
+        "rating": 2
+    },
+    {
+        "category": "Health",
+        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "title": "Mung Bean",
+        "currency": "$",
+        "old-price": 21.00,
+        "new-price": 11.00,
+        "rating": 3
+    },
+    {
+        "category": "Nuts",
+        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "title": "Brown Hazelnut",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 13.00,
+        "rating": 5
+    },
+    {
+        "category": "Vegetable",
+        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "title": "Calabrese Broccoli",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 13.00,
+        "rating": 5
+    },
+    {
+        "category": "Vegetable",
+        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "title": "Calabrese Broccoli",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 13.00,
+        "rating": 5
+    },
+    {
+        "category": "Vegetable",
+        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "title": "Calabrese Broccoli",
+        "currency": "$",
+        "old-price": 20.00,
+        "new-price": 13.00,
+        "rating": 5
+    }
+]

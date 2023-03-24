@@ -1,0 +1,32 @@
+@import "assets/styles/variables.scss";
+
+.products {
+    text-align: center;
+    margin-top: 176px;
+    margin-bottom: 200px;
+
+    &__subtitle {
+        font-family: 'Yellowtail';
+        font-weight: 400;
+        font-size: $fs-36;
+        line-height: 49px;
+        color: $color-dark-green;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-50;
+        line-height: 59px;
+        color: $color-darkslategray;
+    }
+
+    &__cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        width: 100%;
+        margin-bottom: 120px;
+        margin-top: 40px;
+    }
+}

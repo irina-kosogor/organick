@@ -1,13 +1,13 @@
 @import "assets/styles/variables.scss";
 
 .about-us {
-    height: 100vh;
-    padding: 5% 0;
+    padding: 180px 0;
     background: $color-whitesmoke url("../../assets/images/about_us_bg.png") center left no-repeat;
 
     &__content {
         width: 50%;
-        float: right;
+
+        margin-left: 50%;
     }
 
     &__subtitle {
