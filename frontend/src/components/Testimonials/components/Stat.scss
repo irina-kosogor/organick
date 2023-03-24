@@ -1,0 +1,25 @@
+@import "assets/styles/variables.scss";
+
+.stat {
+    width: 211px;
+    height: 211px;
+    background: $color-gray;
+    border-radius: 50%;
+    border: solid 5px $color-dark-green;
+    padding: 6px;
+    background-clip: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-50;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: $fs-18;
+    }
+}

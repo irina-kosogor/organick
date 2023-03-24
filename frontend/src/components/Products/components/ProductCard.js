@@ -1,4 +1,5 @@
 import "./ProductCard.scss";
+import { createRating } from "utils/functions/createRating";
 
 export const ProductCard = ({
 	category,
@@ -9,14 +10,6 @@ export const ProductCard = ({
 	newPrice,
 	rating,
 }) => {
-	const createRating = (stars) => {
-		const arr = [];
-		for (let i = 0; i < stars; i++) {
-			arr.push("⭐");
-		}
-		return arr;
-	};
-
 	return (
 		<div className="product-card">
 			<div className="product-card__category">{category}</div>
