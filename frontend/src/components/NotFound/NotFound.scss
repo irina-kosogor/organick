@@ -1,0 +1,31 @@
+@import "assets/styles/variables.scss";
+
+.not-found {
+    padding: 214px 0;
+    background: url("../../assets/images/not_found_bg.jpg") no-repeat;
+
+    &__wrapper {
+        margin-left: 55%;
+    }
+
+    &__error-code {
+        font-size: 220px;
+        font-weight: 800;
+        color: #8FA8A8;
+        line-height: 175px;
+    }
+
+    &__error-title {
+        font-weight: 800;
+        font-size: $fs-70;
+    }
+
+    &__error-subtitle {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: $fs-18;
+        line-height: 1.65;
+        color: $color-dimgray;
+        margin-bottom: 40px;
+    }
+}
