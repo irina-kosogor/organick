@@ -10,6 +10,7 @@ import { EcoFriendly } from "components/EcoFriendly/EcoFriendly";
 import { Gallery } from "components/Gallery/Gallery";
 import { News } from "components/News/News";
 import { Subscribe } from "components/Subscribe/Subscribe";
+import { Footer } from "components/Footer/Footer";
 
 const App = () => {
 	return (
@@ -25,6 +26,7 @@ const App = () => {
 			<Gallery />
 			<News />
 			<Subscribe />
+			<Footer />
 		</>
 	);
 };
