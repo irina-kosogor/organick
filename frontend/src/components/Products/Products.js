@@ -6,7 +6,7 @@ import "./Products.scss";
 export const Products = () => {
 	const firstEightProducts = fakeData.slice(0, 8);
 	return (
-		<div className="products">
+		<div className="products" id="products">
 			<div className="container">
 				<div className="products__subtitle">Categories</div>
 				<div className="products__title">Our Products</div>

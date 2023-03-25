@@ -15,7 +15,7 @@ export const AboutUs = () => {
 		},
 	];
 	return (
-		<div className="about-us">
+		<div className="about-us" id="about-us">
 			<div className="container">
 				<div className="about-us__content">
 					<h3 className="about-us__subtitle">About Us</h3>

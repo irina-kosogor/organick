@@ -3,7 +3,7 @@ import "./Hero.scss";
 
 export const Hero = () => {
 	return (
-		<div className="hero">
+		<div className="hero" id="hero">
 			<div className="container">
 				<div className="hero__content">
 					<h2 className="hero__subtitle">100% Natural Food</h2>

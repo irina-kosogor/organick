@@ -7,7 +7,7 @@ export const Offers = () => {
 		{ subtitle: "Offer!!", title: "Get 10% off on Vegetables" },
 	];
 	return (
-		<div className="offers">
+		<div className="offers" id="offers">
 			<div className="container">
 				<div className="offers__wrapper">
 					{cards.map((card, index) => (

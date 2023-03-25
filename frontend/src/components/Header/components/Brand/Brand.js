@@ -1,13 +1,14 @@
-import "./Brand.scss";
 import logo from "assets/images/logo.svg";
+import { Link } from "react-router-dom";
+import "./Brand.scss";
 
-export const Brand = ({ homeLink }) => {
+export const Brand = () => {
 	return (
 		<div className="brand">
-			<a className="brand__link" href={`/${homeLink.toLowerCase()}`}>
+			<Link className="brand__link" to="/">
 				<img className="brand__icon" alt="logo-img" src={logo} />
 				<span className="brand__title">Organick</span>
-			</a>
+			</Link>
 		</div>
 	);
 };

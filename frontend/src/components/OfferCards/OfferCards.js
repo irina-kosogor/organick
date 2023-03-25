@@ -5,7 +5,7 @@ import "./OfferCards.scss";
 export const OfferCards = () => {
 	const firstEFourtProducts = fakeData.slice(0, 4);
 	return (
-		<div className="offer-cards">
+		<div className="offer-cards" id="offer-cards">
 			<div className="container">
 				<div className="offer-cards__subtitle">Offer</div>
 				<div className="offer-cards__title">

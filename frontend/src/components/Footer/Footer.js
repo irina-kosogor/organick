@@ -74,7 +74,7 @@ export const Footer = () => {
 
 					<div className="footer__social">
 						<div className="footer__social-brand">
-							<Brand homeLink="Home" />
+							<Brand />
 						</div>
 						<div className="footer__social-slogan">
 							Simply dummy text of the printing and typesetting

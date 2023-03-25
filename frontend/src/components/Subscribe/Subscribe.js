@@ -3,7 +3,7 @@ import "./Subscribe.scss";
 
 export const Subscribe = () => {
 	return (
-		<div className="subscribe">
+		<div className="subscribe" id="subscribe">
 			<div className="container">
 				<div className="subscribe__wrapper">
 					<h3 className="subscribe__title">

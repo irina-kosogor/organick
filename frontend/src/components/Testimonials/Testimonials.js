@@ -22,7 +22,7 @@ export const Testimonials = () => {
 	];
 
 	return (
-		<div className="testimonials">
+		<div className="testimonials" id="testimonials">
 			<div className="container">
 				<div className="testimonials__content">
 					<h3 className="testimonials__subtitle">Testimonial</h3>

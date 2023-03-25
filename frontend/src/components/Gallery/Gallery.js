@@ -8,7 +8,7 @@ export const Gallery = () => {
 		{ title: "Nuts Cookies" },
 	];
 	return (
-		<div className="gallery">
+		<div className="gallery" id="gallery">
 			<div className="gallery__wrapper">
 				{galleryCards.map((card, index) => (
 					<GalleryCard title={card.title} key={index} />

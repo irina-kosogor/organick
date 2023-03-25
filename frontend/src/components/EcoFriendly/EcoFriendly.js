@@ -19,7 +19,7 @@ export const EcoFriendly = () => {
 		},
 	];
 	return (
-		<div className="eco-friendly">
+		<div className="eco-friendly" id="eco-friendly">
 			<div className="container">
 				<div className="eco-friendly__content">
 					<h3 className="eco-friendly__subtitle">Eco Friendly</h3>

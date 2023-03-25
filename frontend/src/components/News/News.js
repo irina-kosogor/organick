@@ -20,7 +20,7 @@ export const News = () => {
 		},
 	];
 	return (
-		<div className="news">
+		<div className="news" id="news">
 			<div className="container">
 				<div className="news__header">
 					<div className="news__titles">
