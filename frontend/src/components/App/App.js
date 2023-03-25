@@ -11,6 +11,7 @@ import { Gallery } from "components/Gallery/Gallery";
 import { News } from "components/News/News";
 import { Subscribe } from "components/Subscribe/Subscribe";
 import { Footer } from "components/Footer/Footer";
+import { ThankYou } from "components/ThankYou/ThankYou";
 import "./App.scss";
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
 				<Gallery />
 				<News />
 				<Subscribe />
+				<ThankYou />
 			</div>
 			<Footer />
 		</>

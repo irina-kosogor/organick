@@ -1,0 +1,15 @@
+@import "assets/styles/variables.scss";
+
+.thank-you {
+    padding-top: 94px;
+    text-align: center;
+    height: 40vw;
+    background: url("../../assets/images/thank_you_bg.jpg") top 10vw center/100vw 50vh no-repeat;
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-70;
+    }
+
+
+}
