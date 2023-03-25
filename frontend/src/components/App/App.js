@@ -11,21 +11,24 @@ import { Gallery } from "components/Gallery/Gallery";
 import { News } from "components/News/News";
 import { Subscribe } from "components/Subscribe/Subscribe";
 import { Footer } from "components/Footer/Footer";
+import "./App.scss";
 
 const App = () => {
 	return (
 		<>
-			<Header />
-			<Hero />
-			<Offers />
-			<AboutUs />
-			<Products />
-			<Testimonials />
-			<OfferCards />
-			<EcoFriendly />
-			<Gallery />
-			<News />
-			<Subscribe />
+			<div className="wrapper">
+				<Header />
+				<Hero />
+				<Offers />
+				<AboutUs />
+				<Products />
+				<Testimonials />
+				<OfferCards />
+				<EcoFriendly />
+				<Gallery />
+				<News />
+				<Subscribe />
+			</div>
 			<Footer />
 		</>
 	);
