@@ -1,10 +1,10 @@
-import "./Header.scss";
 import { Brand } from "./components/Brand/Brand";
 import { Navbar } from "./components/Navbar/Navbar";
 import { SearchInput } from "./components/SearchInput/SearchInput";
 import { Cart } from "./components/Cart/Cart";
+import "./Header.scss";
 
-const Header = () => {
+export const Header = () => {
 	const navLinks = ["Home", "About", "Pages", "Shop", "Projects", "News"];
 
 	return (
@@ -22,5 +22,3 @@ const Header = () => {
 		</div>
 	);
 };
-
-export default Header;

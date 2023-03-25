@@ -3,11 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail:wght@400&display=swap");
 @import './assets/styles/variables.scss';
 
-html {
+html,
+body,
+#root {
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: $color-darkslategray;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 *,
