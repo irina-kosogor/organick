@@ -7,6 +7,8 @@ import { Products } from "components/Products/Products";
 import { Testimonials } from "components/Testimonials/Testimonials";
 import { OfferCards } from "components/OfferCards/OfferCards";
 import { EcoFriendly } from "components/EcoFriendly/EcoFriendly";
+import { Gallery } from "components/Gallery/Gallery";
+import { News } from "components/News/News";
 
 const App = () => {
 	return (
@@ -19,6 +21,8 @@ const App = () => {
 			<Testimonials />
 			<OfferCards />
 			<EcoFriendly />
+			<Gallery />
+			<News />
 		</>
 	);
 };

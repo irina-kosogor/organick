@@ -1,0 +1,51 @@
+@import "assets/styles/variables.scss";
+
+.news {
+    padding: 160px 0;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 50px;
+    }
+
+    &__titles {
+        width: 50%;
+    }
+
+    &__subtitle {
+        font-family: 'Yellowtail';
+        font-weight: 400;
+        font-size: $fs-36;
+        color: $color-dark-green;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-50;
+        line-height: 59px;
+
+    }
+
+    .news-cards {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+
+    .news-card {
+        position: relative;
+    }
+
+    .news-card-item {
+        width: 90%;
+        position: absolute;
+        bottom: -68px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}

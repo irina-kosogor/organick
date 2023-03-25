@@ -1,0 +1,40 @@
+@import "assets/styles/variables.scss";
+
+.news-card-item {
+    background: $color-white;
+    box-shadow: 0 20px 35px rgba(167, 167, 167, 0.25);
+    border-radius: 31px 34px 30px 30px;
+    padding: 50px 60px;
+
+    &__author {
+        font-weight: 400;
+        font-size: $fs-18;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 15px;
+
+        &:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url("../../../../assets/icons/news_icon.svg") center center no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: $fs-25;
+    }
+
+    &__description {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: $fs-18;
+        line-height: 1.65;
+        color: $color-dimgray;
+        margin-bottom: 15px;
+    }
+}
