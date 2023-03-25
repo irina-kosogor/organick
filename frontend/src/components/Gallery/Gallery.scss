@@ -1,0 +1,12 @@
+@import "assets/styles/variables.scss";
+
+.gallery {
+    padding: 160px 0;
+    background: $color-mint-green;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
