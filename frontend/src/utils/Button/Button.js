@@ -1,6 +1,6 @@
 import "./Button.scss";
 
-export const Button = ({ text, color }) => {
+export const Button = ({ text, color, noArrow = false }) => {
 	const defineBtnColor = (color) => {
 		switch (color) {
 			case "yellow":
@@ -11,10 +11,16 @@ export const Button = ({ text, color }) => {
 				return "white";
 		}
 	};
-	
+
 	return (
-		<button className={`main-button ${defineBtnColor(color)}`}>
-			<span className="main-button__text">{text}</span>
+		<button
+			className={`main-button ${defineBtnColor(color)} ${
+				noArrow ? "noArrow" : ""
+			}`}
+		>
+			<span className={`main-button__text ${noArrow ? "noArrow" : ""}`}>
+				{text}
+			</span>
 		</button>
 	);
 };

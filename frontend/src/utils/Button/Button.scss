@@ -1,7 +1,7 @@
 @import "assets/styles/variables.scss";
 
 .main-button {
-    padding: 20px 40px;
+    padding: 28px 40px;
     border-radius: 16px;
     font-weight: 700;
     font-size: $fs-20;
@@ -21,7 +21,16 @@
             right: 0;
             background: url('../../assets/icons/button_arrow.svg') center center no-repeat;
         }
+
+        &.noArrow {
+            padding-right: 0;
+
+            &:after {
+                content: none;
+            }
+        }
     }
+
 
     &.white {
         background: transparent;

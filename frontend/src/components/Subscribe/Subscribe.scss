@@ -1,0 +1,32 @@
+@import "assets/styles/variables.scss";
+
+.subscribe {
+    padding: 120px 0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 105px 70px;
+        background: url('../../assets/images/subscribe_bg.jpg') center center no-repeat;
+        border-radius: 30px;
+    }
+
+    &__title {
+        width: 35%;
+        font-weight: 800;
+        font-size: $fs-50;
+        line-height: 59px;
+        color: $color-white;
+    }
+
+    &__form-input {
+        width: 349px;
+        border-radius: 16px;
+        margin-right: 10px;
+        padding: 28px;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+    }
+}
