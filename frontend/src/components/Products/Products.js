@@ -1,5 +1,6 @@
 import { Button } from "utils/Button/Button";
 import { ProductCard } from "./components/ProductCard";
+import { Link } from "react-router-dom";
 import fakeData from "./fakeData.json";
 import "./Products.scss";
 
@@ -13,6 +14,7 @@ export const Products = () => {
 				<div className="products__cards-wrapper">
 					{firstEightProducts.map((product, index) => {
 						const {
+							id,
 							category,
 							"img-url": imageUrl,
 							title,
@@ -22,16 +24,18 @@ export const Products = () => {
 							rating,
 						} = product;
 						return (
-							<ProductCard
-								key={index}
-								category={category}
-								imageUrl={imageUrl}
-								title={title}
-								currency={currency}
-								oldPrice={oldPrice}
-								newPrice={newPrice}
-								rating={rating}
-							/>
+							<Link to={`product/${id}`}>
+								<ProductCard
+									key={index}
+									category={category}
+									imageUrl={imageUrl}
+									title={title}
+									currency={currency}
+									oldPrice={oldPrice}
+									newPrice={newPrice}
+									rating={rating}
+								/>
+							</Link>
 						);
 					})}
 				</div>
