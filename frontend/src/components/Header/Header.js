@@ -15,7 +15,7 @@ export const Header = () => {
 	];
 
 	return (
-		<div className="header">
+		<header className="header">
 			<div className="container">
 				<div className="header__content">
 					<Brand />
@@ -26,6 +26,6 @@ export const Header = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 	);
 };

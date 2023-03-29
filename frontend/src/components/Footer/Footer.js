@@ -45,7 +45,7 @@ export const Footer = () => {
 	];
 
 	return (
-		<div className="footer">
+		<footer className="footer">
 			<div className="container">
 				<div className="footer__wrapper">
 					<div className="footer__contacts">
@@ -111,9 +111,9 @@ export const Footer = () => {
 				</div>
 			</div>
 			<div className="footer__copyright">
-				Copyright © <b>Organick</b> | Designed by <b>VictorFlow</b>{" "}
+				Copyright &copy; <b>Organick</b> | Designed by <b>VictorFlow</b>{" "}
 				Templates - Powered by <b>Webflow</b>
 			</div>
-		</div>
+		</footer>
 	);
 };

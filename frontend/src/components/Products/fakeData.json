@@ -1,6 +1,7 @@
 [{
+        "id": 1,
         "category": "Vegetable",
-        "img-url": "https://www.seekpng.com/png/detail/29-299737_broccoli-png-no-background-broccoli-cut.png",
+        "img-url": "images/broccoli.png",
         "title": "Calabrese Broccoli",
         "currency": "$",
         "old-price": 20.00,
@@ -8,8 +9,9 @@
         "rating": 5
     },
     {
+        "id": 2,
         "category": "Fresh",
-        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "img-url": "images/banana.png",
         "title": "Fresh Banana Fruites",
         "currency": "$",
         "old-price": 20.00,
@@ -17,8 +19,9 @@
         "rating": 4
     },
     {
+        "id": 3,
         "category": "Millets",
-        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "img-url": "images/pistachios.png",
         "title": "White Nuts",
         "currency": "$",
         "old-price": 20.00,
@@ -26,8 +29,9 @@
         "rating": 5
     },
     {
+        "id": 4,
         "category": "Vegetable",
-        "img-url": "https://png.pngtree.com/png-clipart/20220716/ourmid/pngtree-banana-yellow-fruit-banana-skewers-png-image_5944324.png",
+        "img-url": "images/tomato.png",
         "title": "Vegan Red Tomato",
         "currency": "$",
         "old-price": 22.00,
@@ -35,8 +39,9 @@
         "rating": 2
     },
     {
+        "id": 5,
         "category": "Health",
-        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "img-url": "images/mung_bean.png",
         "title": "Mung Bean",
         "currency": "$",
         "old-price": 21.00,
@@ -44,8 +49,9 @@
         "rating": 3
     },
     {
+        "id": 6,
         "category": "Nuts",
-        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "img-url": "images/hazelnut.png",
         "title": "Brown Hazelnut",
         "currency": "$",
         "old-price": 20.00,
@@ -53,26 +59,29 @@
         "rating": 5
     },
     {
-        "category": "Vegetable",
-        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
-        "title": "Calabrese Broccoli",
+        "id": 7,
+        "category": "Fresh",
+        "img-url": "images/eggs.png",
+        "title": "Eggs",
         "currency": "$",
-        "old-price": 20.00,
-        "new-price": 13.00,
+        "old-price": 23.00,
+        "new-price": 19.00,
         "rating": 5
     },
     {
-        "category": "Vegetable",
-        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
-        "title": "Calabrese Broccoli",
+        "id": 8,
+        "category": "Fresh",
+        "img-url": "images/rusk.png",
+        "title": "Zelco Suji Elaichi Rusk",
         "currency": "$",
         "old-price": 20.00,
-        "new-price": 13.00,
+        "new-price": 15.00,
         "rating": 5
     },
     {
+        "id": 9,
         "category": "Vegetable",
-        "img-url": "https://www.pngplay.com/wp-content/uploads/4/Broccoli-PNG-Background.png",
+        "img-url": "images/pistachios.png",
         "title": "Calabrese Broccoli",
         "currency": "$",
         "old-price": 20.00,
