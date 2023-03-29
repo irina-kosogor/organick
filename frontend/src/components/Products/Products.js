@@ -24,9 +24,8 @@ export const Products = () => {
 							rating,
 						} = product;
 						return (
-							<Link to={`product/${id}`}>
+							<Link key={index} to={`product/${id}`}>
 								<ProductCard
-									key={index}
 									category={category}
 									imageUrl={imageUrl}
 									title={title}

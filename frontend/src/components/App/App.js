@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { NotFound } from "components/NotFound/NotFound";
 import { ThankYou } from "components/ThankYou/ThankYou";
 import { Modal } from "components/Modal/Modal";
+import { ProductOrder } from "components/ProductOrder/ProductOrder";
+import fakeData from "../Products/fakeData.json";
 import "./App.scss";
 
 export const App = () => {
@@ -28,7 +30,9 @@ export const App = () => {
 								<MainContent />
 								<Modal
 									onClose={handleCloseModal}
-									children={<div>def</div>}
+									children={
+										<ProductOrder product={fakeData[0]} />
+									}
 								/>
 							</>
 						}
