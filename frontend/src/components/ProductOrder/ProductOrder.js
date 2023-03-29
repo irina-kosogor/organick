@@ -1,8 +1,8 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Button } from "utils/Button/Button";
 import { createRating } from "utils/functions/createRating";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
-import fakeData from "../Products/fakeData.json";
 import "./ProductOrder.scss";
 
 export const ProductOrder = () => {
@@ -12,7 +12,15 @@ export const ProductOrder = () => {
 
 	const { id: urlId } = useParams();
 
-	const product = fakeData.find((product) => product.id === +urlId);
+	const [product, setProduct] = useState({});
+
+	useEffect(() => {
+		const fetchProduct = async () => {
+			const { data } = await axios.get(`/api/product/${urlId}`);
+			setProduct(data);
+		};
+		fetchProduct();
+	}, []);
 
 	const {
 		category,
@@ -42,11 +50,11 @@ export const ProductOrder = () => {
 					<div className="product-order__prices">
 						<span className="product-order__old-price">
 							{currency}
-							{oldPrice.toFixed(2)}
+							{Number(oldPrice).toFixed(2)}
 						</span>
 						<span className="product-order__new-price">
 							{currency}
-							{newPrice.toFixed(2)}
+							{Number(newPrice).toFixed(2)}
 						</span>
 					</div>
 					<div className="product-order__product-text">{text}</div>

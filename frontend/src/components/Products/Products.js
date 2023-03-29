@@ -1,18 +1,20 @@
+import React, { useContext } from "react";
 import { Button } from "utils/Button/Button";
 import { ProductCard } from "./components/ProductCard";
 import { Link } from "react-router-dom";
-import fakeData from "./fakeData.json";
+import { ProductsContext } from "components/App/App";
 import "./Products.scss";
 
 export const Products = () => {
-	const firstEightProducts = fakeData.slice(0, 8);
+	const products = useContext(ProductsContext);
+
 	return (
 		<div className="products" id="products">
 			<div className="container">
 				<div className="products__subtitle">Categories</div>
 				<div className="products__title">Our Products</div>
 				<div className="products__cards-wrapper">
-					{firstEightProducts.map((product, index) => {
+					{products.map((product, index) => {
 						const {
 							id,
 							category,
