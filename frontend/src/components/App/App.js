@@ -5,6 +5,7 @@ import { MainContent } from "components/MainContent/MainContent";
 import { useNavigate } from "react-router-dom";
 import { NotFound } from "components/NotFound/NotFound";
 import { ThankYou } from "components/ThankYou/ThankYou";
+import { CartScreen } from "components/CartScreen/CartScreen";
 import { Modal } from "components/Modal/Modal";
 import { ProductOrder } from "components/ProductOrder/ProductOrder";
 import fakeData from "../Products/fakeData.json";
@@ -38,6 +39,7 @@ export const App = () => {
 						}
 					/>
 					<Route path="thanks" element={<ThankYou />} />
+					<Route path="cart" element={<CartScreen />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
