@@ -12,6 +12,36 @@ import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import "./App.scss";
 
+const orderData = {
+	products: [
+		{
+			_id: 1,
+			quantity: 1,
+			oldPrice: 18,
+			newPrice: 16,
+		},
+		{
+			_id: 2,
+			quantity: 1,
+			oldPrice: 18,
+			newPrice: 16,
+		},
+		{
+			_id: 3,
+			quantity: 1,
+			oldPrice: 18,
+			newPrice: 16,
+		},
+	],
+	customer: {
+		fullName: "Irina Kosogor",
+		email: "",
+		address: "",
+		phone: "",
+		message: "",
+	},
+};
+
 export const ProductsContext = createContext();
 
 export const App = () => {
@@ -31,6 +61,37 @@ export const App = () => {
 		fetchProducts();
 	}, []);
 
+	const initialOrderData = { products: [], customer: {} };
+
+	const [orderData, setOrderData] = useState(initialOrderData);
+
+	const addProduct = (_id, quantity) => {
+		setOrderData((oldData) => {
+			const product = oldData.products.find(
+				(product) => product._id === _id
+			);
+
+			if (product) {
+				return {
+					...oldData,
+					products: [
+						...oldData.products.filter(
+							(product) => product._id !== _id
+						),
+						{
+							_id: product._id,
+							quantity: +product.quantity + +quantity,
+						},
+					],
+				};
+			}
+			return {
+				...oldData,
+				products: [...oldData.products, { _id, quantity: +quantity }],
+			};
+		});
+	};
+
 	return (
 		<div className="wrapper">
 			<Header />
@@ -46,13 +107,19 @@ export const App = () => {
 						}
 					/>
 					<Route
-						path="product/:id"
+						path="products/:id"
 						element={
 							<ProductsContext.Provider value={products}>
 								<MainContent />
 								<Modal
 									onClose={handleCloseModal}
-									children={<ProductOrder />}
+									children={
+										<ProductOrder
+											addProduct={(_id, quantity) =>
+												addProduct(_id, quantity)
+											}
+										/>
+									}
 								/>
 							</ProductsContext.Provider>
 						}

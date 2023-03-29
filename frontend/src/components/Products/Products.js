@@ -16,20 +16,20 @@ export const Products = () => {
 				<div className="products__cards-wrapper">
 					{products.map((product, index) => {
 						const {
-							id,
+							_id,
 							category,
-							"img-url": imageUrl,
+							imgUrl,
 							title,
 							currency,
-							"old-price": oldPrice,
-							"new-price": newPrice,
+							oldPrice,
+							newPrice,
 							rating,
 						} = product;
 						return (
-							<Link key={index} to={`product/${id}`}>
+							<Link key={index} to={`products/${_id}`}>
 								<ProductCard
 									category={category}
-									imageUrl={imageUrl}
+									imageUrl={imgUrl}
 									title={title}
 									currency={currency}
 									oldPrice={oldPrice}

@@ -17,11 +17,11 @@ export const OfferCards = () => {
 					{firstFourProducts.map((product, index) => {
 						const {
 							category,
-							"img-url": imageUrl,
+							imgUrl: imageUrl,
 							title,
 							currency,
-							"old-price": oldPrice,
-							"new-price": newPrice,
+							oldPrice,
+							newPrice,
 							rating,
 						} = product;
 						return (

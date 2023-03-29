@@ -5,7 +5,7 @@ import { createRating } from "utils/functions/createRating";
 import { useParams } from "react-router-dom";
 import "./ProductOrder.scss";
 
-export const ProductOrder = () => {
+export const ProductOrder = ({ addProduct }) => {
 	const [activeExtraInfo, setActiveExtraInfo] = useState(
 		"product-description"
 	);
@@ -13,22 +13,24 @@ export const ProductOrder = () => {
 	const { id: urlId } = useParams();
 
 	const [product, setProduct] = useState({});
+	const [quantity, setQuantity] = useState(1);
 
 	useEffect(() => {
 		const fetchProduct = async () => {
-			const { data } = await axios.get(`/api/product/${urlId}`);
+			const { data } = await axios.get(`/api/products/${urlId}`);
 			setProduct(data);
 		};
 		fetchProduct();
 	}, []);
 
 	const {
+		_id,
 		category,
-		"img-url": imageUrl,
+		imgUrl,
 		title,
 		currency,
-		"old-price": oldPrice,
-		"new-price": newPrice,
+		oldPrice,
+		newPrice,
 		rating,
 		text,
 		description,
@@ -40,7 +42,7 @@ export const ProductOrder = () => {
 			<div className="product-order__content">
 				<div className="product-order__image">
 					<div className="product-order__category">{category}</div>
-					<img src={imageUrl} alt={title} />
+					<img src={imgUrl} alt={title} />
 				</div>
 				<div className="product-order__info">
 					<h3 className="product-order__product-title">{title}</h3>
@@ -67,12 +69,19 @@ export const ProductOrder = () => {
 						</label>
 						<input
 							id="product-order-input"
-							defaultValue="1"
+							defaultValue={quantity}
 							type="number"
 							min="0"
 							className="product-order__cta-quantity"
+							onChange={(e) => {
+								setQuantity(e.target.value);
+							}}
 						/>
-						<Button text="Add To Cart" color="darkBlue" />
+						<Button
+							text="Add To Cart"
+							color="darkBlue"
+							onClick={() => addProduct(_id, quantity)}
+						/>
 					</div>
 				</div>
 			</div>
