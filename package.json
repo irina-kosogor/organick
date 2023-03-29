@@ -1,0 +1,14 @@
+{
+  "name": "organick",
+  "version": "1.0.0",
+  "description": "MERN project ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node backend/app"
+  },
+  "author": "Irina Kosogor <i.v.kosogor@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
