@@ -1,16 +1,21 @@
 @import "assets/styles/variables.scss";
 
 .cart-screen {
-    padding-top: 94px;
     text-align: center;
-    height: 40vw;
-    background: url("../../assets/images/card_bg.jpg") top center no-repeat;
 
     &__title {
-        padding-top: 9vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("../../assets/images/card_bg.jpg") top center no-repeat;
+        height: 350px;
         font-weight: 800;
         font-size: $fs-70;
+        margin-bottom: 50px;
     }
 
-
+    &__content {
+        padding: 50px 0;
+        background: rgba(253, 176, 45, 0.16);
+    }
 }
