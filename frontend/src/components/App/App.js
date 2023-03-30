@@ -1,6 +1,6 @@
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useSearchParams } from "react-router-dom";
 import { MainContent } from "components/MainContent/MainContent";
 import { useNavigate } from "react-router-dom";
 import { NotFound } from "components/NotFound/NotFound";
@@ -46,6 +46,7 @@ export const ProductsContext = createContext();
 
 export const App = () => {
 	const navigate = useNavigate();
+	const [searchParams] = useSearchParams();
 
 	const handleCloseModal = () => {
 		navigate("/");
@@ -55,8 +56,13 @@ export const App = () => {
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const { data } = await axios.get("/api/products");
-			setProducts(data.slice(0, 8));
+			let url = "/api/products";
+			if (searchParams.get("allProducts") === "true") {
+				url += "?allProducts=true";
+			}
+			let { data } = await axios.get(url);
+			setProducts(data);
+			// setProducts(data.slice(0, 8));
 		};
 		fetchProducts();
 	}, []);

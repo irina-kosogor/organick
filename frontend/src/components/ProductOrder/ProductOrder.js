@@ -52,11 +52,11 @@ export const ProductOrder = ({ addProduct }) => {
 					<div className="product-order__prices">
 						<span className="product-order__old-price">
 							{currency}
-							{Number(oldPrice).toFixed(2)}
+							{Number(oldPrice)?.toFixed(2) || 0}
 						</span>
 						<span className="product-order__new-price">
 							{currency}
-							{Number(newPrice).toFixed(2)}
+							{Number(newPrice)?.toFixed(2) || 0}
 						</span>
 					</div>
 					<div className="product-order__product-text">{text}</div>

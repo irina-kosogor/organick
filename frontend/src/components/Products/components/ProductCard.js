@@ -21,11 +21,11 @@ export const ProductCard = ({
 				<div className="product-card__prices">
 					<span className="product-card__old-price">
 						{currency}
-						{oldPrice.toFixed(2)}
+						{Number(oldPrice)?.toFixed(2) || 0}
 					</span>
 					<span className="product-card__new-price">
 						{currency}
-						{newPrice.toFixed(2)}
+						{Number(newPrice)?.toFixed(2) || 0}
 					</span>
 				</div>
 				<div className="product-card__product-rating">
