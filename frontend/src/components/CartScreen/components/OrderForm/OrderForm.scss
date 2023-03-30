@@ -1,0 +1,47 @@
+@import "assets/styles/variables.scss";
+
+.order-form {
+    padding: 35px 130px;
+    // margin-bottom: 80px;
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+        label {
+            display: block;
+            text-align: start;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: $fs-18;
+            line-height: 21px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            height: 80px;
+            background: $color-white;
+            border: 1px solid $color-silver;
+            border-radius: 16px;
+            padding: 20px;
+            font-weight: 400;
+            font-size: $fs-20;
+        }
+
+        textarea {
+            height: inherit;
+        }
+
+        &:last-of-type {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+}
