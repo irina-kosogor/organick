@@ -1,0 +1,31 @@
+@import "assets/styles/variables.scss";
+
+.products-list {
+
+
+    &__order-details {
+        font-weight: 700;
+        font-size: $fs-25;
+        line-height: 47px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__order-details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        column-gap: 15px;
+    }
+
+    &__total-cost-title,
+    &__discount-title {
+        justify-self: left;
+    }
+
+    &__total-cost-value,
+    &__discount-value {
+        justify-self: right;
+    }
+}
