@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
 import "./Cart.scss";
 
 export const Cart = ({ quantity = 0 }) => {
-	return <div className="cart">Cart ({quantity})</div>;
+	return (
+		<Link to="/cart">
+			<div className="cart">Cart ({quantity})</div>
+		</Link>
+	);
 };
