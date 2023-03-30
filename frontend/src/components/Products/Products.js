@@ -1,12 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "utils/Button/Button";
 import { ProductCard } from "./components/ProductCard";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ProductsContext } from "components/App/App";
 import "./Products.scss";
+import { useEffect } from "react";
 
 export const Products = () => {
 	const products = useContext(ProductsContext);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [allProducts, setAllProducts] = useState(
+		searchParams.get("allProducts")
+	);
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		setAllProducts((oldValue) => !oldValue);
+	};
+
+	useEffect(() => {
+		setSearchParams(allProducts ? { allProducts: "true" } : {});
+	}, [allProducts, setSearchParams]);
 
 	return (
 		<div className="products" id="products">
@@ -41,7 +55,11 @@ export const Products = () => {
 					})}
 				</div>
 				<div>
-					<Button text="Load More" color="darkBlue" />
+					<Button
+						onClick={handleClick}
+						text={allProducts ? "Hide All" : "Load More"}
+						color="darkBlue"
+					/>
 				</div>
 			</div>
 		</div>

@@ -62,10 +62,9 @@ export const App = () => {
 			}
 			let { data } = await axios.get(url);
 			setProducts(data);
-			// setProducts(data.slice(0, 8));
 		};
 		fetchProducts();
-	}, []);
+	}, [searchParams]);
 
 	const initialOrderData = { products: [], customer: {} };
 

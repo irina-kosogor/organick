@@ -20,7 +20,6 @@ router.get(
 
 		const products = await Product.find(query.find) // Filter by old price
 			.limit(query.limit) // Fetch only 8 elements
-			.sort({ createdAt: -1 }) // Sort by date in descending order
 			.select("category title imgUrl oldPrice  newPrice rating"); // Select only desired fields
 		res.json(products);
 	})
