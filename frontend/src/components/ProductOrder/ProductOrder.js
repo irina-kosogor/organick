@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { Button } from "utils/Button/Button";
 import { createRating } from "utils/functions/createRating";
 import { useParams } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import "./ProductOrder.scss";
 
 export const ProductOrder = ({ addProduct }) => {
@@ -22,6 +24,18 @@ export const ProductOrder = ({ addProduct }) => {
 		};
 		fetchProduct();
 	}, []);
+
+	const notify = () => {
+		toast.success(`${product.title} added to the cart succcesfully`, {
+			position: toast.POSITION.BOTTOM_CENTER,
+			autoClose: 3000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: true,
+			progress: undefined,
+			theme: "colored",
+		});
+	};
 
 	const {
 		_id,
@@ -80,7 +94,11 @@ export const ProductOrder = ({ addProduct }) => {
 						<Button
 							text="Add To Cart"
 							color="darkBlue"
-							onClick={() => addProduct(_id, quantity)}
+							onClick={() => {
+								console.log("onclick");
+								notify();
+								addProduct(_id, quantity);
+							}}
 						/>
 					</div>
 				</div>

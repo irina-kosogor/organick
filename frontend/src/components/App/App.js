@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, createContext } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -75,18 +76,7 @@ export const App = () => {
 	}, [products]);
 
 	const initialOrderData = {
-		products: [
-			{
-				category: "Fresh",
-				imgUrl: "/images/banana.png",
-				newPrice: 14,
-				oldPrice: 20,
-				quantity: 1,
-				rating: 4,
-				title: "Fresh Banana Fruites",
-				_id: "6424821ef87edc9adabe7682",
-			},
-		],
+		products: [],
 		customer: {},
 	};
 
@@ -191,6 +181,7 @@ export const App = () => {
 				</Route>
 			</Routes>
 			<Footer />
+			<ToastContainer />
 		</div>
 	);
 };
