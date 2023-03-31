@@ -1,7 +1,22 @@
-
 import "./ProductsList.scss";
 
-export const ProductsList = ({ children }) => {
+export const ProductsList = ({ children, products }) => {
+	let totalCost = 0;
+	let totalCostNoDiscount = 0;
+	const currency = products[0].currency;
+
+	products.forEach((product) => {
+		let oldPrice = 0;
+		if (!product.oldPrice) {
+			oldPrice = product.newPrice;
+		} else {
+			oldPrice = product.oldPrice;
+		}
+
+		totalCost += product.newPrice * product.quantity;
+		totalCostNoDiscount += oldPrice * product.quantity;
+	});
+
 	return (
 		<div className="products-list">
 			<div className="container">
@@ -12,12 +27,16 @@ export const ProductsList = ({ children }) => {
 							Total Cost
 						</div>
 						<div className="products-list__total-cost-value">
-							26$
+							{totalCost.toFixed(2)}
+							{currency}
 						</div>
 						<div className="products-list__discount-title">
 							Discount
 						</div>
-						<div className="products-list__discount-value">14$</div>
+						<div className="products-list__discount-value">
+							{(totalCostNoDiscount - totalCost).toFixed(2)}
+							{currency}
+						</div>
 					</div>
 				</div>
 			</div>

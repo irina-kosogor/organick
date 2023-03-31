@@ -95,7 +95,6 @@ export const ProductOrder = ({ addProduct }) => {
 							text="Add To Cart"
 							color="darkBlue"
 							onClick={() => {
-								console.log("onclick");
 								notify();
 								addProduct(_id, quantity);
 							}}
