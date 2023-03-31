@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, createContext } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -34,13 +34,6 @@ const orderData = {
 			newPrice: 16,
 		},
 	],
-	customer: {
-		fullName: "Irina Kosogor",
-		email: "",
-		address: "",
-		phone: "",
-		message: "",
-	},
 };
 
 export const ProductsContext = createContext();
@@ -142,6 +135,12 @@ export const App = () => {
 		});
 	};
 
+	const clearProducts = () => {
+		setOrderData(oldData => {
+			return {...oldData, products: []}
+		})
+	}
+
 	return (
 		<div className="wrapper">
 			<Header orderedProducts={orderedProducts} />
@@ -197,6 +196,7 @@ export const App = () => {
 								orderData={{ products: orderedProducts }}
 								removeProduct={removeProduct}
 								updateProductQuantity={updateProductQuantity}
+								clearProducts={clearProducts}
 							/>
 						}
 					/>

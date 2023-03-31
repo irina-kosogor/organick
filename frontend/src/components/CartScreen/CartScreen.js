@@ -10,6 +10,7 @@ export const CartScreen = ({
 	orderData,
 	removeProduct,
 	updateProductQuantity,
+	clearProducts,
 }) => {
 	const [showForm, setShowForm] = useState(false);
 
@@ -48,7 +49,7 @@ export const CartScreen = ({
 						)}
 					</>
 				)}
-				{showForm && <OrderForm />}
+				{showForm && <OrderForm clearProducts={clearProducts} />}
 			</div>
 		</div>
 	);

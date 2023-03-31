@@ -1,8 +1,11 @@
-import "./OrderForm.scss";
+import { useNavigate } from "react-router-dom";
 import { Button } from "utils/Button/Button";
+import "./OrderForm.scss";
 
-export const OrderForm = () => {
+export const OrderForm = ({ clearProducts }) => {
 	const formData = {};
+
+	const navigate = useNavigate();
 
 	const handleChange = (event, fieldName) => {
 		formData[fieldName] = event.target.value;
@@ -11,7 +14,8 @@ export const OrderForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log("data has been applied");
-		// apply form data to our store here
+		clearProducts();
+		navigate("/thanks");
 	};
 
 	return (
@@ -23,6 +27,7 @@ export const OrderForm = () => {
 							<label htmlFor="order-form__name">Full Name*</label>
 							<input
 								id="order-form__name"
+								name="order-form__name"
 								className="order-form__name"
 								type="text"
 								placeholder="Your full name"
@@ -36,6 +41,7 @@ export const OrderForm = () => {
 							</label>
 							<input
 								id="order-form__email"
+								name="order-form__email"
 								className="order-form__email"
 								type="email"
 								placeholder="example@yourmail.com"
@@ -49,6 +55,7 @@ export const OrderForm = () => {
 							</label>
 							<input
 								id="order-form__address"
+								name="order-form__address"
 								className="order-form__address"
 								type="text"
 								placeholder="Your company address"
@@ -62,10 +69,10 @@ export const OrderForm = () => {
 							</label>
 							<input
 								id="order-form__phone"
+								name="order-form__phone"
 								className="order-form__phone"
 								type="tel"
-								pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-								placeholder="111-222-3333"
+								placeholder="Your phone number"
 								required
 								onChange={(e) => handleChange(e, "phone")}
 							/>
@@ -75,6 +82,7 @@ export const OrderForm = () => {
 							<textarea
 								rows="5"
 								id="order-form__message"
+								name="order-form__message"
 								className="order-form__message"
 								placeholder="Type your message here"
 								onChange={(e) => handleChange(e, "message")}
