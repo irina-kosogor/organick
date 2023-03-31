@@ -12,8 +12,12 @@ export const ProductItem = ({ product }) => {
 				<div className="product-item__titles">
 					<div className="product-item__title">{title}</div>
 					<div className="product-item__old-price">
-						{currency}
-						{Number(oldPrice)?.toFixed(2) || 0}
+						{oldPrice && (
+							<>
+								{currency}
+								{Number(oldPrice)?.toFixed(2) || 0}
+							</>
+						)}
 					</div>
 					<div className="product-item__new-price">
 						{currency}

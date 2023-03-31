@@ -20,8 +20,12 @@ export const ProductCard = ({
 			<div className="product-card__info-wrapper">
 				<div className="product-card__prices">
 					<span className="product-card__old-price">
-						{currency}
-						{Number(oldPrice)?.toFixed(2) || 0}
+						{oldPrice && (
+							<>
+								{currency}
+								{Number(oldPrice)?.toFixed(2) || 0}
+							</>
+						)}
 					</span>
 					<span className="product-card__new-price">
 						{currency}
