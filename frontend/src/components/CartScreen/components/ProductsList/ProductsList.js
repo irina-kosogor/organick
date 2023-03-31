@@ -1,5 +1,4 @@
 
-import { OrderForm } from "../OrderForm/OrderForm";
 import "./ProductsList.scss";
 
 export const ProductsList = ({ children }) => {
@@ -21,8 +20,6 @@ export const ProductsList = ({ children }) => {
 						<div className="products-list__discount-value">14$</div>
 					</div>
 				</div>
-				
-				
 			</div>
 		</div>
 	);

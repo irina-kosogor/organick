@@ -4,8 +4,8 @@ import { ProductsContext } from "components/App/App";
 import "./OfferCards.scss";
 
 export const OfferCards = () => {
-	const products = useContext(ProductsContext);
-	const firstFourProducts = products.slice(0, 4);
+	const { products } = useContext(ProductsContext);
+	const firstFourProducts = products?.slice(0, 4);
 	return (
 		<div className="offer-cards" id="offer-cards">
 			<div className="container">

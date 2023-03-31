@@ -4,23 +4,33 @@ import Product from "../models/productModel.js";
 const router = express.Router();
 
 /**
- * @descr Fetch all products with old prices, filtered by price and sorted by date in descending order
+ * @descr Fetch 8 products with old prices
  * @route GET /api/products
  * @access Public
  */
 router.get(
 	"/",
 	asyncHandler(async (req, res) => {
-		let query = { find: {}, limit: 0 };
+		const products = await Product.find({
+			oldPrice: { $exists: true, $ne: null },
+		}) // Filter by old price
+			.limit(8) // Fetch only 8 elements
+			.select("category title imgUrl oldPrice newPrice currency rating"); // Select only desired fields
+		res.json(products);
+	})
+);
 
-		if (!req.query.allProducts) {
-			query.find = { oldPrice: { $exists: true, $ne: null } };
-			query.limit = 8;
-		}
-
-		const products = await Product.find(query.find) // Filter by old price
-			.limit(query.limit) // Fetch only 8 elements
-			.select("category title imgUrl oldPrice  newPrice rating"); // Select only desired fields
+/**
+ * @descr Fetch all products
+ * @route GET /api/products/all
+ * @access Public
+ */
+router.get(
+	"/all",
+	asyncHandler(async (req, res) => {
+		const products = await Product.find({}).select(
+			"category title imgUrl oldPrice newPrice currency rating"
+		); // Select only desired fields
 		res.json(products);
 	})
 );

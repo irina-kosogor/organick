@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Button } from "utils/Button/Button";
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { OrderForm } from "./components/OrderForm/OrderForm";
+import { ProductItem } from "./components/ProductItem/ProductItem";
 
 import "./CartScreen.scss";
 
-export const CartScreen = () => {
+export const CartScreen = ({ orderData }) => {
 	const [showForm, setShowForm] = useState(false);
 
 	const handleClick = () => {
@@ -18,7 +19,11 @@ export const CartScreen = () => {
 				<span>Cart</span>
 			</h3>
 			<div className="cart-screen__content">
-				<ProductsList />
+				<ProductsList>
+					{orderData.products.map((product) => (
+						<ProductItem key={product._id} product={product} />
+					))}
+				</ProductsList>
 				{!showForm && (
 					<Button
 						text="To order"

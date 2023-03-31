@@ -1,6 +1,8 @@
+import React, { useState, useEffect, useMemo, createContext } from "react";
+import axios from "axios";
 import { Header } from "components/Header/Header";
 import { Footer } from "components/Footer/Footer";
-import { Routes, Route, useSearchParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { MainContent } from "components/MainContent/MainContent";
 import { useNavigate } from "react-router-dom";
 import { NotFound } from "components/NotFound/NotFound";
@@ -8,8 +10,6 @@ import { ThankYou } from "components/ThankYou/ThankYou";
 import { CartScreen } from "components/CartScreen/CartScreen";
 import { Modal } from "components/Modal/Modal";
 import { ProductOrder } from "components/ProductOrder/ProductOrder";
-import React, { useState, useEffect, createContext } from "react";
-import axios from "axios";
 import "./App.scss";
 
 const orderData = {
@@ -46,29 +46,63 @@ export const ProductsContext = createContext();
 
 export const App = () => {
 	const navigate = useNavigate();
-	const [searchParams] = useSearchParams();
 
 	const handleCloseModal = () => {
 		navigate("/");
 	};
 
 	const [products, setProducts] = useState([]);
+	const [allProducts, setAllProducts] = useState([]);
+
+	const fetchAllProducts = async () => {
+		if (allProducts.length === 0) {
+			let url = "/api/products/all";
+			let { data } = await axios.get(url);
+			setAllProducts(data);
+		}
+	};
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			let url = "/api/products";
-			if (searchParams.get("allProducts") === "true") {
-				url += "?allProducts=true";
-			}
-			let { data } = await axios.get(url);
+			const url = "/api/products";
+			const { data } = await axios.get(url);
 			setProducts(data);
 		};
-		fetchProducts();
-	}, [searchParams]);
 
-	const initialOrderData = { products: [], customer: {} };
+		if (products.length === 0) {
+			fetchProducts();
+		}
+	}, [products]);
+
+	const initialOrderData = {
+		products: [
+			{
+				category: "Fresh",
+				imgUrl: "/images/banana.png",
+				newPrice: 14,
+				oldPrice: 20,
+				quantity: 1,
+				rating: 4,
+				title: "Fresh Banana Fruites",
+				_id: "6424821ef87edc9adabe7682",
+			},
+		],
+		customer: {},
+	};
 
 	const [orderData, setOrderData] = useState(initialOrderData);
+
+	const orderedProducts = useMemo(() => {
+		const fetchedProducts =
+			allProducts.length === 0 ? products : allProducts;
+
+		return orderData.products.map((data) => {
+			const product = fetchedProducts.find(
+				(product) => product._id === data._id
+			);
+			return { ...product, quantity: data.quantity };
+		});
+	}, [products, allProducts, orderData]);
 
 	const addProduct = (_id, quantity) => {
 		setOrderData((oldData) => {
@@ -106,7 +140,15 @@ export const App = () => {
 						path=""
 						exact="true"
 						element={
-							<ProductsContext.Provider value={products}>
+							<ProductsContext.Provider
+								value={{
+									products:
+										allProducts.length === 0
+											? products
+											: allProducts,
+									fetchAllProducts,
+								}}
+							>
 								<MainContent />
 							</ProductsContext.Provider>
 						}
@@ -114,7 +156,14 @@ export const App = () => {
 					<Route
 						path="products/:id"
 						element={
-							<ProductsContext.Provider value={products}>
+							<ProductsContext.Provider
+								value={{
+									products:
+										allProducts.length === 0
+											? products
+											: allProducts,
+								}}
+							>
 								<MainContent />
 								<Modal
 									onClose={handleCloseModal}
@@ -130,7 +179,14 @@ export const App = () => {
 						}
 					/>
 					<Route path="thanks" element={<ThankYou />} />
-					<Route path="cart" element={<CartScreen />} />
+					<Route
+						path="cart"
+						element={
+							<CartScreen
+								orderData={{ products: orderedProducts }}
+							/>
+						}
+					/>
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
