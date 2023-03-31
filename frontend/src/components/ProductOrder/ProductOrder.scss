@@ -96,13 +96,15 @@
     }
 
     &__cta-quantity {
-        width: 134px;
+        width: 120px;
         align-self: stretch;
         background: $color-white;
         border: 2px solid $color-darkslategray;
         border-radius: 16px;
-        padding: 20px 5px;
+        padding: 16px 5px 16px 20px;
         text-align: center;
+        font-weight: 700;
+        font-size: $fs-20;
     }
 
     &__extra-info {
@@ -126,4 +128,3 @@
         color: $color-dimgray;
     }
 }
-

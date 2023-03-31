@@ -104,13 +104,13 @@ export const App = () => {
 				return {
 					...oldData,
 					products: [
-						...oldData.products.filter(
-							(product) => product._id !== _id
-						),
-						{
-							_id: product._id,
-							quantity: +product.quantity + +quantity,
-						},
+						...oldData.products.map((product) => {
+							if (product._id !== _id) return product;
+							return {
+								...product,
+								quantity: +product.quantity + +quantity,
+							};
+						}),
 					],
 				};
 			}
@@ -118,6 +118,27 @@ export const App = () => {
 				...oldData,
 				products: [...oldData.products, { _id, quantity: +quantity }],
 			};
+		});
+	};
+
+	const removeProduct = (_id) => {
+		setOrderData((oldData) => {
+			const updatedProducts = oldData.products.filter(
+				(product) => product._id !== _id
+			);
+			return { ...oldData, products: updatedProducts };
+		});
+	};
+
+	const updateProductQuantity = (_id, quantity) => {
+		setOrderData((oldData) => {
+			const updatedProducts = oldData.products.map((product) => {
+				if (product._id !== _id) {
+					return product;
+				}
+				return { ...product, quantity };
+			});
+			return { ...oldData, products: updatedProducts };
 		});
 	};
 
@@ -174,6 +195,8 @@ export const App = () => {
 						element={
 							<CartScreen
 								orderData={{ products: orderedProducts }}
+								removeProduct={removeProduct}
+								updateProductQuantity={updateProductQuantity}
 							/>
 						}
 					/>

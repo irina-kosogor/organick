@@ -26,7 +26,7 @@ export const ProductOrder = ({ addProduct }) => {
 	}, []);
 
 	const notify = () => {
-		toast.success(`${product.title} added to the cart succcesfully`, {
+		toast.success(`${product.title} added to the cart`, {
 			position: toast.POSITION.BOTTOM_CENTER,
 			autoClose: 3000,
 			hideProgressBar: true,

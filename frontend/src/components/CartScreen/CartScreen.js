@@ -6,7 +6,11 @@ import { ProductItem } from "./components/ProductItem/ProductItem";
 
 import "./CartScreen.scss";
 
-export const CartScreen = ({ orderData }) => {
+export const CartScreen = ({
+	orderData,
+	removeProduct,
+	updateProductQuantity,
+}) => {
 	const [showForm, setShowForm] = useState(false);
 
 	const handleClick = () => {
@@ -28,6 +32,10 @@ export const CartScreen = ({ orderData }) => {
 								<ProductItem
 									key={product._id}
 									product={product}
+									removeProduct={removeProduct}
+									updateProductQuantity={
+										updateProductQuantity
+									}
 								/>
 							))}
 						</ProductsList>
