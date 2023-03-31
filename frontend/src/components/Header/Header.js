@@ -4,7 +4,7 @@ import { SearchInput } from "./components/SearchInput/SearchInput";
 import { Cart } from "./components/Cart/Cart";
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = ({ orderedProducts }) => {
 	const navLinks = [
 		{ name: "Home", hash: "hero" },
 		{ name: "About", hash: "about-us" },
@@ -22,7 +22,7 @@ export const Header = () => {
 					<Navbar navLinks={navLinks} />
 					<div className="header__search-cart">
 						<SearchInput />
-						<Cart />
+						<Cart orderedProducts={orderedProducts} />
 					</div>
 				</div>
 			</div>

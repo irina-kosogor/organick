@@ -123,7 +123,7 @@ export const App = () => {
 
 	return (
 		<div className="wrapper">
-			<Header />
+			<Header orderedProducts={orderedProducts} />
 			<Routes>
 				<Route path="/">
 					<Route
