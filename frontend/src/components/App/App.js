@@ -13,29 +13,6 @@ import { Modal } from "components/Modal/Modal";
 import { ProductOrder } from "components/ProductOrder/ProductOrder";
 import "./App.scss";
 
-const orderData = {
-	products: [
-		{
-			_id: 1,
-			quantity: 1,
-			oldPrice: 18,
-			newPrice: 16,
-		},
-		{
-			_id: 2,
-			quantity: 1,
-			oldPrice: 18,
-			newPrice: 16,
-		},
-		{
-			_id: 3,
-			quantity: 1,
-			oldPrice: 18,
-			newPrice: 16,
-		},
-	],
-};
-
 export const ProductsContext = createContext();
 
 export const App = () => {
@@ -136,10 +113,16 @@ export const App = () => {
 	};
 
 	const clearProducts = () => {
-		setOrderData(oldData => {
-			return {...oldData, products: []}
-		})
-	}
+		setOrderData((oldData) => {
+			return { ...oldData, products: [] };
+		});
+	};
+
+	const updateCustomer = (customerData) => {
+		setOrderData((oldData) => {
+			return { ...oldData, customer: customerData };
+		});
+	};
 
 	return (
 		<div className="wrapper">
@@ -193,10 +176,14 @@ export const App = () => {
 						path="cart"
 						element={
 							<CartScreen
-								orderData={{ products: orderedProducts }}
+								orderData={{
+									products: orderedProducts,
+									customer: orderData.customer,
+								}}
 								removeProduct={removeProduct}
 								updateProductQuantity={updateProductQuantity}
 								clearProducts={clearProducts}
+								updateCustomer={updateCustomer}
 							/>
 						}
 					/>

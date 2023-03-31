@@ -1,21 +1,37 @@
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "utils/Button/Button";
 import "./OrderForm.scss";
 
-export const OrderForm = ({ clearProducts }) => {
-	const formData = {};
-
+export const OrderForm = ({ clearProducts, orderData, updateCustomer }) => {
 	const navigate = useNavigate();
 
-	const handleChange = (event, fieldName) => {
-		formData[fieldName] = event.target.value;
+	const [formData, setFormData] = useState({});
+
+	useEffect(() => {
+		updateCustomer(formData);
+	}, [formData]);
+
+	const handleChange = (e) => {
+		setFormData((old) => {
+			return { ...old, [e.target.name]: e.target.value };
+		});
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("data has been applied");
-		clearProducts();
-		navigate("/thanks");
+		try {
+			await axios.post("/api/orders", orderData, {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			clearProducts();
+			navigate("/thanks");
+		} catch (error) {
+			console.error(`Error: ${error.message}`);
+		}
 	};
 
 	return (
@@ -27,12 +43,12 @@ export const OrderForm = ({ clearProducts }) => {
 							<label htmlFor="order-form__name">Full Name*</label>
 							<input
 								id="order-form__name"
-								name="order-form__name"
+								name="fullName"
 								className="order-form__name"
 								type="text"
 								placeholder="Your full name"
 								required
-								onChange={(e) => handleChange(e, "fullName")}
+								onInput={handleChange}
 							/>
 						</div>
 						<div className="order-form__item">
@@ -41,12 +57,12 @@ export const OrderForm = ({ clearProducts }) => {
 							</label>
 							<input
 								id="order-form__email"
-								name="order-form__email"
+								name="email"
 								className="order-form__email"
 								type="email"
 								placeholder="example@yourmail.com"
 								required
-								onChange={(e) => handleChange(e, "email")}
+								onInput={handleChange}
 							/>
 						</div>
 						<div className="order-form__item">
@@ -55,12 +71,12 @@ export const OrderForm = ({ clearProducts }) => {
 							</label>
 							<input
 								id="order-form__address"
-								name="order-form__address"
+								name="address"
 								className="order-form__address"
 								type="text"
 								placeholder="Your company address"
 								required
-								onChange={(e) => handleChange(e, "address")}
+								onInput={handleChange}
 							/>
 						</div>
 						<div className="order-form__item">
@@ -69,12 +85,12 @@ export const OrderForm = ({ clearProducts }) => {
 							</label>
 							<input
 								id="order-form__phone"
-								name="order-form__phone"
+								name="phone"
 								className="order-form__phone"
 								type="tel"
 								placeholder="Your phone number"
 								required
-								onChange={(e) => handleChange(e, "phone")}
+								onInput={handleChange}
 							/>
 						</div>
 						<div className="order-form__item">
@@ -82,10 +98,10 @@ export const OrderForm = ({ clearProducts }) => {
 							<textarea
 								rows="5"
 								id="order-form__message"
-								name="order-form__message"
+								name="message"
 								className="order-form__message"
 								placeholder="Type your message here"
-								onChange={(e) => handleChange(e, "message")}
+								onInput={handleChange}
 							/>
 						</div>
 					</div>
