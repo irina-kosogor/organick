@@ -19,17 +19,26 @@ export const CartScreen = ({ orderData }) => {
 				<span>Cart</span>
 			</h3>
 			<div className="cart-screen__content">
-				<ProductsList>
-					{orderData.products.map((product) => (
-						<ProductItem key={product._id} product={product} />
-					))}
-				</ProductsList>
-				{!showForm && (
-					<Button
-						text="To order"
-						color="darkBlue"
-						onClick={handleClick}
-					/>
+				{orderData.products.length === 0 ? (
+					"No products in the cart"
+				) : (
+					<>
+						<ProductsList products={orderData.products}>
+							{orderData.products.map((product) => (
+								<ProductItem
+									key={product._id}
+									product={product}
+								/>
+							))}
+						</ProductsList>
+						{!showForm && (
+							<Button
+								text="To order"
+								color="darkBlue"
+								onClick={handleClick}
+							/>
+						)}
+					</>
 				)}
 				{showForm && <OrderForm />}
 			</div>
