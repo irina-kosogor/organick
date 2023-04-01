@@ -7,7 +7,7 @@ export const Navbar = ({ navLinks }) => {
 			{navLinks.map((item, index) => (
 				<Link
 					key={index}
-					to={`#${item.hash}`}
+					to={`/#${item.hash}`}
 					className={
 						item.name === "Pages" ? "dropdown-menu" : undefined
 					}
