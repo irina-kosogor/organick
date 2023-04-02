@@ -27,4 +27,23 @@
         z-index: 1;
         cursor: pointer;
     }
+
+    @media (max-width: $large-device-breakpoint) {
+        padding-left: 55px;
+        width: 130px;
+        height: 46px;
+        line-height: 46px;
+
+        &:after {
+            width: 36px;
+            height: 36px;
+            right: 6px;
+            background: $color-darkslategray url("../../../../assets/icons/shopping_cart.svg") center center/50% no-repeat;
+        }
+    }
+
+    @media (max-width: $x-small-device-breakpoint) {
+        width: 110px;
+        padding-left: 50px;
+    }
 }
