@@ -26,7 +26,9 @@ export const CartScreen = ({
 			</h3>
 			<div className="cart-screen__content">
 				{orderData.products.length === 0 ? (
-					"No products in the cart"
+					<h4 className="cart-screen__no-products">
+						No products in the cart
+					</h4>
 				) : (
 					<>
 						<ProductsList products={orderData.products}>

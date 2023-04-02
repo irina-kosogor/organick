@@ -2,7 +2,6 @@
 
 .product-item {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px dotted $color-silver;
@@ -17,7 +16,6 @@
         align-items: center;
         justify-content: center;
         height: 230px;
-        width: 300px;
         border-radius: 30px;
 
         img {
@@ -79,5 +77,23 @@
         background-color: $color-darkslategray;
         border-radius: 10px;
         font-size: $fs-18;
+    }
+
+    @media (max-width: $medium-device-breakpoint) {
+        &__titles {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__quantity {
+            input {
+                padding: 15px;
+            }
+        }
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        flex-direction: column;
+        padding-bottom: 50px;
     }
 }
