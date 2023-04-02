@@ -79,22 +79,24 @@ export const ProductOrder = ({ addProduct }) => {
 					</div>
 					<div className="product-order__product-text">{text}</div>
 					<div className="product-order__cta">
-						<label
-							htmlFor="product-order-input"
-							className="product-order__cta-label"
-						>
-							Quantity :
-						</label>
-						<input
-							id="product-order-input"
-							defaultValue={quantity}
-							type="number"
-							min="0"
-							className="product-order__cta-quantity"
-							onChange={(e) => {
-								setQuantity(e.target.value);
-							}}
-						/>
+						<div className="product-order__quantity-wrapper">
+							<label
+								htmlFor="product-order-input"
+								className="product-order__cta-label"
+							>
+								Quantity :
+							</label>
+							<input
+								id="product-order-input"
+								defaultValue={quantity}
+								type="number"
+								min="0"
+								className="product-order__cta-quantity"
+								onChange={(e) => {
+									setQuantity(e.target.value);
+								}}
+							/>
+						</div>
 						<Button
 							text="Add To Cart"
 							color="darkBlue"

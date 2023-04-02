@@ -15,6 +15,8 @@
         padding: 50px 0;
         background: $color-white;
         width: 100%;
+        max-height: 80vh;
+        overflow: scroll;
     }
 
     &__content {
@@ -32,4 +34,9 @@
         font-size: $fs-20;
     }
 
+    @media (max-width: $x-small-device-breakpoint) {
+        &__close-button {
+            padding: 0 5px;
+        }
+    }
 }
