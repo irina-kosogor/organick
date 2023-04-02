@@ -1,5 +1,6 @@
 import { Brand } from "./components/Brand/Brand";
 import { Navbar } from "./components/Navbar/Navbar";
+import { MobileNavbar } from "./components/MobileNavbar/MobileNavbar";
 import { SearchInput } from "./components/SearchInput/SearchInput";
 import { Cart } from "./components/Cart/Cart";
 import "./Header.scss";
@@ -23,6 +24,7 @@ export const Header = ({ orderedProducts }) => {
 					<div className="header__search-cart">
 						<SearchInput />
 						<Cart orderedProducts={orderedProducts} />
+						<MobileNavbar navLinks={navLinks} />
 					</div>
 				</div>
 			</div>
