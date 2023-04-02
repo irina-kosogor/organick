@@ -1,8 +1,16 @@
 @import "assets/styles/variables.scss";
 
 .testimonials {
-    padding: 160px 0;
+    padding: 126px 0;
     background: url("../../assets/images/testimonials_bg.jpg") center center/cover no-repeat;
+
+    @media (max-width: $large-device-breakpoint) {
+        padding: 96px 0;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        padding: 66px 0;
+    }
 
     &__content {
         text-align: center;
@@ -38,6 +46,12 @@
         font-size: $fs-18;
         line-height: 1.65;
         color: $color-dimgray;
+    }
+
+    @media (max-width: $medium-device-breakpoint) {
+        &__text {
+            width: 95%;
+        }
     }
 
     &__full-name {
@@ -78,8 +92,10 @@
         margin: 0 auto;
         padding-top: 100px;
         border-top: 1px solid $color-gray;
-        width: 80%;
+        max-width: 80%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
+        gap: 20px;
     }
 }
