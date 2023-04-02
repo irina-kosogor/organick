@@ -4,17 +4,17 @@ $font-yellowtail: Yellowtail;
 $font-open-sans: "Open Sans";
 
 /* font sizes */
-$fs-15: 0.94rem;
-$fs-18: 1.125rem;
-$fs-19: 1.19rem;
-$fs-20: 1.25rem;
-$fs-25: 1.56rem;
-$fs-30: 1.875rem;
-$fs-36: 2.25rem;
-$fs-38: 2.375rem;
-$fs-40: 2.5rem;
-$fs-50: 3.125rem;
-$fs-70: 4.375rem;
+$fs-15: 0.94em;
+$fs-18: 1.125em;
+$fs-19: 1.19em;
+$fs-20: 1.25em;
+$fs-25: 1.56em;
+$fs-30: 1.875em;
+$fs-36: 2.25em;
+$fs-38: 2.375em;
+$fs-40: 2.5em;
+$fs-50: 3.125em;
+$fs-70: 4.375em;
 
 /* Colors */
 $color-white: #fff;
@@ -28,3 +28,11 @@ $color-whitesmoke: #f9f8f8;
 $color-silver: #b8b8b8;
 $color-dimgray: #525c60;
 $color-lightgray: #d4d4d4;
+$color-pink: #F96893;
+
+// Media breakpoints
+$x-large-device-breakpoint: 1399.98px;
+$large-device-breakpoint: 1199.98px;
+$medium-device-breakpoint: 991.98px;
+$small-device-breakpoint: 767.98px;
+$x-small-device-breakpoint: 575.98px;
