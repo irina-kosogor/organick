@@ -1,9 +1,11 @@
 @import "assets/styles/variables.scss";
 
 .hero {
-    height: calc(100vh - 206px);
-    padding: 10% 0;
+    height: calc(100vh - 126px);
+    padding: 126px 0;
     background: url("../../assets/images/hero_bg.jpg") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
 
     &__content {
         width: 38%;
@@ -22,5 +24,40 @@
         font-size: $fs-70;
         line-height: 82px;
         margin-bottom: 23px;
+    }
+
+    &__content {
+        width: 40%;
+    }
+
+    @media (max-width: $large-device-breakpoint) {
+        padding: 96px 0;
+        height: calc(100vh - 96px);
+
+        &__title {
+            font-size: $fs-50;
+            line-height: 52px;
+            margin-bottom: 23px;
+        }
+
+        &__content {
+            width: 45%;
+        }
+    }
+
+
+    @media (max-width: $small-device-breakpoint) {
+        height: calc(100vh - 66px);
+        padding: 66px 0;
+        background: url("../../assets/images/hero_bg.jpg") top left/cover no-repeat;
+        text-align: center;
+
+        &__content {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $x-small-device-breakpoint) {
+        background: #EEECEF;
     }
 }
