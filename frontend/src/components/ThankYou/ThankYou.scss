@@ -1,15 +1,33 @@
 @import "assets/styles/variables.scss";
 
 .thank-you {
-    padding-top: 94px;
     text-align: center;
-    height: 40vw;
-    background: url("../../assets/images/thank_you_bg.jpg") top 10vw center/100vw 50vh no-repeat;
+    margin-bottom: 100px;
+
+    &__img {
+        background: url("../../assets/images/thank_you_bg.jpg") center center/cover no-repeat;
+        height: 40vw;
+    }
 
     &__title {
         font-weight: 800;
         font-size: $fs-70;
+        margin: 50px 0;
     }
 
+    @media (max-width: $small-device-breakpoint) {
+        margin-bottom: 50px;
 
+        &__title {
+            font-size: $fs-50;
+        }
+    }
+
+    @media (max-width: $x-small-device-breakpoint) {
+        margin-bottom: 20px;
+
+        &__title {
+            font-size: $fs-36;
+        }
+    }
 }
