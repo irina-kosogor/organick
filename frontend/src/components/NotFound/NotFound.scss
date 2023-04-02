@@ -1,17 +1,20 @@
 @import "assets/styles/variables.scss";
 
 .not-found {
-    padding: 214px 0;
-    background: url("../../assets/images/not_found_bg.jpg") no-repeat;
+    background: url("../../assets/images/not_found_bg.jpg") 40% center no-repeat;
+    margin-bottom: 100px;
 
     &__wrapper {
-        margin-left: 55%;
+        height: calc(100vh - 126px);
+        display: flex;
+        justify-content: end;
+        align-items: center;
     }
 
     &__error-code {
-        font-size: 220px;
+        font-size: $fs-220;
         font-weight: 800;
-        color: #8FA8A8;
+        color: $color-light-mint;
         line-height: 175px;
     }
 
@@ -27,5 +30,25 @@
         line-height: 1.65;
         color: $color-dimgray;
         margin-bottom: 40px;
+    }
+
+    @media (max-width: $large-device-breakpoint) {
+        &__wrapper {
+            height: calc(100vh - 96px);
+        }
+    }
+
+    @media (max-width: $medium-device-breakpoint) {
+        background: $color-lightgray;
+
+        &__wrapper {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        &__wrapper {
+            height: calc(100vh - 66px);
+        }
     }
 }
