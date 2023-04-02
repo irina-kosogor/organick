@@ -2,7 +2,6 @@
 
 .order-form {
     padding: 35px 130px;
-    // margin-bottom: 80px;
 
     &__items {
         display: grid;
@@ -44,4 +43,23 @@
         }
     }
 
+    @media (max-width: $small-device-breakpoint) {
+        padding: 0;
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__item {
+            label {
+                margin-bottom: 10px;
+            }
+
+            input {
+                height: 50px;
+            }
+        }
+    }
 }
