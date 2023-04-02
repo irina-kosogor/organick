@@ -1,8 +1,17 @@
 @import "assets/styles/variables.scss";
 
 .eco-friendly {
-    padding: 160px 0;
+    padding: 126px 0;
     background: $color-whitesmoke url("../../assets/images/eco_friendly_bg.jpg") center left/50% 100% no-repeat;
+
+    @media (max-width: $large-device-breakpoint) {
+        padding: 96px 0;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        padding: 66px 0;
+        background: none;
+    }
 
     &__content {
         width: 60%;
@@ -10,6 +19,19 @@
         background: $color-white;
         border-radius: 30px;
         padding: 80px 90px;
+    }
+
+    @media (max-width: $medium-device-breakpoint) {
+        &__content {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        &__content {
+            padding: 0 30px;
+        }
     }
 
     &__subtitle {
@@ -20,11 +42,30 @@
         margin-bottom: 10px;
     }
 
+    @media (max-width: $small-device-breakpoint) {
+        &__subtitle {
+            text-align: center;
+        }
+    }
+
     &__title {
         font-weight: 800;
         font-size: $fs-70;
         line-height: 82px;
         margin-bottom: 35px;
+    }
+
+    @media (max-width: $large-device-breakpoint) {
+        &__title {
+            font-size: $fs-50;
+            line-height: 52px;
+        }
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        &__title {
+            text-align: center;
+        }
     }
 
     &__item-title {
