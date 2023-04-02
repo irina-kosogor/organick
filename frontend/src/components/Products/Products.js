@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Button } from "utils/Button/Button";
 import { ProductCard } from "./components/ProductCard";
 import { Link } from "react-router-dom";
@@ -7,13 +7,23 @@ import { useMemo } from "react";
 import "./Products.scss";
 
 export const Products = () => {
+	const headerRef = useRef(null);
 	const { products, fetchAllProducts } = useContext(ProductsContext);
 
 	const [showAllProducts, setShowAllProducts] = useState(false);
 
 	const handleClick = async () => {
 		await fetchAllProducts();
-		setShowAllProducts((oldValue) => !oldValue);
+		setShowAllProducts((oldValue) => {
+			if (oldValue) {
+				autoscrollToHeader();
+			}
+			return !oldValue;
+		});
+	};
+
+	const autoscrollToHeader = () => {
+		headerRef.current.scrollIntoView();
 	};
 
 	const productsToShow = useMemo(
@@ -22,7 +32,7 @@ export const Products = () => {
 	);
 
 	return (
-		<div className="products" id="products">
+		<div className="products" id="products" ref={headerRef}>
 			<div className="container">
 				<div className="products__subtitle">Categories</div>
 				<div className="products__title">Our Products</div>
