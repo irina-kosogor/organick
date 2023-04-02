@@ -9,7 +9,13 @@ export const Subscribe = () => {
 					<h3 className="subscribe__title">
 						Subscribe to our Newsletter
 					</h3>
-					<form action="#" className="subscribe__form">
+					<form
+						action="#"
+						onSubmit={(e) => {
+							e.preventDefault();
+						}}
+						className="subscribe__form"
+					>
 						<input
 							type="email"
 							className="subscribe__form-input"
