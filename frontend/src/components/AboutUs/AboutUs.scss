@@ -1,12 +1,28 @@
 @import "assets/styles/variables.scss";
 
 .about-us {
-    padding: 180px 0;
-    background: $color-whitesmoke url("../../assets/images/about_us_bg.png") center left no-repeat;
+    padding: 126px 0;
+    background: $color-whitesmoke url("../../assets/images/about_us_bg.png") center left -10%/75% no-repeat;
 
+    @media (max-width: $large-device-breakpoint) {
+        padding: 96px 0;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        padding: 66px 0;
+    }
+    
     &__content {
         width: 50%;
         margin-left: 50%;
+    }
+    
+    @media (max-width: $small-device-breakpoint) {
+        &__content {
+            width: 100%;
+            margin-left: 0;
+            text-align: center;
+        }
     }
 
     &__subtitle {
@@ -24,6 +40,13 @@
         margin-bottom: 23px;
     }
 
+    @media (max-width: $large-device-breakpoint) {
+        &__title {
+            font-size: $fs-50;
+            line-height: 52px;
+        }
+    }
+
     &__description {
         font-family: 'Open Sans';
         font-weight: 400;
@@ -35,6 +58,12 @@
 
     &__items {
         margin-bottom: 45px;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        &__items {
+            text-align: initial;
+        }
     }
 
     &__item {
@@ -74,5 +103,11 @@
         font-size: $fs-18;
         line-height: 1.65;
         color: $color-dimgray;
+    }
+}
+
+@media (max-width: $small-device-breakpoint) {
+    .about-us {
+        background: none;
     }
 }
