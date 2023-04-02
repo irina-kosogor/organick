@@ -1,8 +1,19 @@
+@import "assets/styles/variables.scss";
+
 .wrapper {
+    margin-top: 126px;
     box-sizing: border-box;
     min-height: 100%;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $large-device-breakpoint) {
+        margin-top: 96px;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        margin-top: 66px;
+    }
 
     .header,
     .footer {

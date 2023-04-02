@@ -20,6 +20,23 @@
             z-index: 1;
             cursor: pointer;
         }
+
+        @media (max-width: $medium-device-breakpoint) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $large-device-breakpoint) {
+        &__search-input-wrapper {
+            height: 46px;
+
+            &:after {
+                width: 36px;
+                height: 36px;
+                right: 6px;
+                background: $color-dark-green url("../../../../assets/icons/search_icon.svg") center center/50% no-repeat;
+            }
+        }
     }
 
     &__search-input {

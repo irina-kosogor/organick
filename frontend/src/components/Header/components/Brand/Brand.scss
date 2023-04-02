@@ -13,7 +13,18 @@
 
     &__title {
         font-weight: 700;
-        font-size: 38px;
+        font-size: $fs-38;
         line-height: 45px;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        &__icon {
+            height: 46px;
+        }
+
+        &__title {
+            font-size: $fs-30;
+        }
+
     }
 }
