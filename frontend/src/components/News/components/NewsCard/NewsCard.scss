@@ -38,4 +38,12 @@
         font-size: $fs-20;
         line-height: 23px;
     }
+
+    @media (max-width: $medium-device-breakpoint) {
+        width: 88%;
+    }
+
+    @media (max-width: $small-device-breakpoint) {
+        height: 400px;
+    }
 }

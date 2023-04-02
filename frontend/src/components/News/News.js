@@ -29,7 +29,9 @@ export const News = () => {
 							Discover weekly content about organic food, & more
 						</h3>
 					</div>
-					<Button text="More News" color="white" />
+					<div className="news__button-wrapper">
+						<Button text="More News" color="white" />
+					</div>
 				</div>
 				<div className="news-cards__wrapper">
 					{cardsData.map((card, index) => (
