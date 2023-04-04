@@ -19,6 +19,7 @@ export const App = () => {
 	const navigate = useNavigate();
 
 	const handleCloseModal = () => {
+		document.body.style.overflow = "";
 		navigate("/");
 	};
 

@@ -1,6 +1,7 @@
 import "./Modal.scss";
 
 export const Modal = ({ onClose, children }) => {
+	document.body.style.overflow = "hidden";
 	return (
 		<div className="modal" onClick={onClose}>
 			<div
