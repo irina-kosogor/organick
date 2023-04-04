@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm insall --prefix frontend && npn rum build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm insall --prefix frontend && npn run build --prefix frontend"
   },
   "author": "Irina Kosogor <i.v.kosogor@gmail.com>",
   "license": "ISC",
