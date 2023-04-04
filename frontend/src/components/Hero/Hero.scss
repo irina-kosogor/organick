@@ -60,4 +60,8 @@
     @media (max-width: $x-small-device-breakpoint) {
         background: #EEECEF;
     }
+
+    @media (max-width: $x-small-device-breakpoint) {
+        background: #EEECEF url("../../assets/images/background_decor.png") top left/cover no-repeat;
+    }
 }
