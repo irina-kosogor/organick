@@ -1,5 +1,6 @@
-import "./Footer.scss";
 import { Brand } from "components/Header/components/Brand/Brand";
+import { HashLink as Link } from "react-router-hash-link";
+import "./Footer.scss";
 
 export const Footer = () => {
 	const contacts = [
@@ -101,11 +102,17 @@ export const Footer = () => {
 							Utility Pages
 						</h5>
 						<div className="footer__utilities-items">
-							{utilsTitles.map((title, index) => (
-								<a href="#home" key={index}>
-									{title}
-								</a>
-							))}
+							{utilsTitles.map((title, index) =>
+								title === "404 Not Found" ? (
+									<Link to="/404#top" key={index}>
+										{title}
+									</Link>
+								) : (
+									<Link to="/#top" key={index}>
+										{title}
+									</Link>
+								)
+							)}
 						</div>
 					</div>
 				</div>

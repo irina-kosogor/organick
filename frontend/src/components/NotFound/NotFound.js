@@ -22,7 +22,7 @@ export const NotFound = () => {
 							<Button
 								text="Go to Homepage"
 								onClick={() => {
-									navigate("/");
+									navigate("/#top");
 								}}
 								color="darkBlue"
 							/>

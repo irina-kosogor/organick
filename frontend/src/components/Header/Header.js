@@ -7,7 +7,7 @@ import "./Header.scss";
 
 export const Header = ({ orderedProducts }) => {
 	const navLinks = [
-		{ name: "Home", hash: "hero" },
+		{ name: "Home", hash: "top" },
 		{ name: "About", hash: "about-us" },
 		{ name: "Pages", hash: "pages" },
 		{ name: "Shop", hash: "products" },
