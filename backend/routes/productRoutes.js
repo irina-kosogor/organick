@@ -11,9 +11,8 @@ const router = express.Router();
 router.get(
 	"/",
 	asyncHandler(async (req, res) => {
-		const products = await Product.find({
-			oldPrice: { $exists: true, $ne: null },
-		}) // Filter by old price
+		const products = await Product.find({}) // Filter by old price
+			.sort({ oldPrice: -1, newPrice: -1 })
 			.limit(8) // Fetch only 8 elements
 			.select("category title imgUrl oldPrice newPrice currency rating"); // Select only desired fields
 		res.json(products);
@@ -28,9 +27,9 @@ router.get(
 router.get(
 	"/all",
 	asyncHandler(async (req, res) => {
-		const products = await Product.find({}).select(
-			"category title imgUrl oldPrice newPrice currency rating"
-		); // Select only desired fields
+		const products = await Product.find({})
+			.sort({ oldPrice: -1, newPrice: -1 }) // Sort by old price in ascending order
+			.select("category title imgUrl oldPrice newPrice currency rating"); // Select only desired fields
 		res.json(products);
 	})
 );
