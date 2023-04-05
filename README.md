@@ -90,7 +90,7 @@ npm run build
 
 Irina Kosogor
 
-Figma layout is porvided by Sigma University
+Figma layout is provided by Sigma University
 
 ## Version History
 
